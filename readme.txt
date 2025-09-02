@@ -1,29 +1,41 @@
-# JavaScript 3 – Lessons (FE24)
+# Lesson 1 – React Intro
 
-Welcome! 👋  
+## Create first project with Vite
 
-This repository contains the code examples from the course *JavaScript 3 with React* (Frontend Web Developer, Grit Academy, 2025).  
+- **Setup**
+  ```bash
+  npm create vite@latest
+Choose React + TypeScript
 
----
+Install dependencies: npm install
 
-## 🚀 How to use this repo
+Start dev server: npm run dev
 
-1. **Clone the repository once:**
-   ```bash
-   git clone <git@github.com:johanhkremer/js3-2025-FE24.git>
-   cd js-2025-FE24
-Switch to the branch for the lesson you want:
+Cleanup
 
-bash
+Remove boilerplate in main.tsx and App.tsx
+
+Remove unused CSS files
+
+💻 Exercise: Run the project and confirm you see a blank page.
+
+Project structure
+main.tsx → entry point (connects React to the DOM)
+
+App.tsx → root component (global components, routing)
+
+components/ → reusable UI blocks
+
+pages/ → application pages
+
+Live coding
+Create components/Button.tsx
+
+Button should log:
+
+tsx
 Copy code
-git checkout lesson-01
-Each branch contains the code we went through together in class.
+console.log("Button clicked!")
+Import and use the button in App.tsx
 
-New branches will be published after each class.
-
-📌 Notes
-The purpose is to help you review what we worked on in class.
-
-The main branch only contains instructions and information, no code.
-
-Good luck, and happy coding! 🎉
+Show how Strict Mode makes the log appear twice.
