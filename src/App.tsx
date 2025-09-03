@@ -1,4 +1,5 @@
 import './App.css'
+import EmojiButton from './components/EmojiButton'
 import TestButton from './components/TestButton'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1>Hello world</h1>
       <TestButton />
+      <EmojiButton />
     </>
   )
 }
