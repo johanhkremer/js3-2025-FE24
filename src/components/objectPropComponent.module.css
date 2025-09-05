@@ -1,0 +1,8 @@
+.imgContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    max-height: 300px;
+}
