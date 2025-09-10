@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
+import { Route, Routes } from "react-router"
+import Home from "./pages/Home"
 
 function App() {
 
   return (
-    <>
-      <h1>Homepage</h1>
-      <Link to="props">Go to props page</Link>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   )
 }
 
