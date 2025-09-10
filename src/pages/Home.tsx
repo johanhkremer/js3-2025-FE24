@@ -1,7 +1,7 @@
 import { useState } from "react"
-import PropMessage from "../components/propMessage"
 import SideEffectCounter from "../components/SideEffectCounter"
 import styles from "./home.module.css"
+import PropMessage from "../components/PropMessage"
 
 const Home = () => {
     const [propMessage, setPropMessage] = useState<string>("")
