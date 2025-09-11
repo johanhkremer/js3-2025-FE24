@@ -1,34 +1,43 @@
-import { useState } from "react"
-import SideEffectCounter from "../components/SideEffectCounter"
+import { useState } from "react";
+import UserCard from "../components/UserCard";
 import styles from "./home.module.css"
-import PropMessage from "../components/PropMessage"
+
+export interface User {
+    id: string,
+    name: string,
+    email: string,
+    role: string,
+    avatarUrl: string,
+    isOnline: boolean
+}
+
+const intialUser: User = {
+    id: "u1",
+    name: "Ada Lovelace",
+    email: "ada@example.com",
+    role: "Admin",
+    avatarUrl: "/ada_lovelace.avif",
+    isOnline: true
+};
 
 const Home = () => {
-    const [propMessage, setPropMessage] = useState<string>("")
+    const [user, setUser] = useState<User>(intialUser)
 
-    const handlePropMessage = (value: string) => {
-        setPropMessage(value)
+    const handleOnlineStatus = () => {
+        setUser((prevUser) => ({
+            ...prevUser,
+            isOnline: !prevUser.isOnline,
+        }))
     }
 
     return (
-        <main>
-            <div className={styles.container}>
-                <div>
-                    <h2>Callback prop (parent)</h2>
-                    <PropMessage message={handlePropMessage} />
-                </div>
-
-                <div>
-                    <p>{propMessage}</p>
-                </div>
-            </div>
-
-            <div className={styles.container}>
-                <SideEffectCounter />
-            </div>
+        <main className={styles.container}>
+            <UserCard user={user} />
+            <button onClick={handleOnlineStatus}>
+                {user.isOnline ? "Set Offline" : "Set Online"}
+            </button>
         </main>
-
-    )
+    );
 }
 
 export default Home
