@@ -1,11 +1,9 @@
-import type { User } from "../pages/Home"
+import { useUserCardContext } from "../hooks/useUserCardContext"
 import styles from "./userCard.module.css"
 
-type UserCardAvatarProps = {
-    user: User
-}
+const UserCardAvatar = () => {
+    const user = useUserCardContext()
 
-const UserCardAvatar = ({ user }: UserCardAvatarProps) => {
     const userImg = user.avatarUrl
 
     return (

@@ -1,11 +1,9 @@
-import type { User } from "../pages/Home"
 import styles from "./userCard.module.css"
+import { useUserCardContext } from "../hooks/useUserCardContext"
 
-type UserCardBodyProp = {
-    user: User
-}
+const UserCardBody = () => {
+    const user = useUserCardContext()
 
-const UserCardBody = ({ user }: UserCardBodyProp) => {
     return (
         <div className={styles.body}>
             <div className={styles.infoRow}>

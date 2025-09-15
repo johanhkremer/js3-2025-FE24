@@ -1,11 +1,8 @@
-import type { User } from "../pages/Home"
+import { useUserCardContext } from "../hooks/useUserCardContext"
 import styles from "./userCard.module.css"
 
-type UserCardFooterProp = {
-    user: User
-}
-
-const UserCardFooter = ({ user }: UserCardFooterProp) => {
+const UserCardFooter = () => {
+    const user = useUserCardContext()
     const isOnline = user.isOnline
 
     return (

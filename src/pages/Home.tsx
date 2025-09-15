@@ -1,15 +1,8 @@
 import { useState } from "react";
 import UserCard from "../components/UserCard";
 import styles from "./home.module.css"
-
-export interface User {
-    id: string,
-    name: string,
-    email: string,
-    role: string,
-    avatarUrl: string,
-    isOnline: boolean
-}
+import type { User } from "../types/user";
+import { UserCardContext } from "../context/useContext";
 
 const intialUser: User = {
     id: "u1",
@@ -32,7 +25,9 @@ const Home = () => {
 
     return (
         <main className={styles.container}>
-            <UserCard user={user} />
+            <UserCardContext.Provider value={user}>
+                <UserCard />
+            </UserCardContext.Provider>
             <button onClick={handleOnlineStatus}>
                 {user.isOnline ? "Set Offline" : "Set Online"}
             </button>
