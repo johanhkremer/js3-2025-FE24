@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import type { JsonDataTodo } from "../types/todo.typs"
+import type { JsonDataTodo } from "../types/todos.typs"
 import LoadSpinner from "./LoadSpinner"
 
 const TodosAsyncAwait = () => {
@@ -43,7 +43,7 @@ const TodosAsyncAwait = () => {
 
     return (
         <>
-            <div>TodosAsyncAwait</div>
+            <h2>TodosAsyncAwait</h2>
             {isLoading && <LoadSpinner />}
             {isError && <p>Something went wrong: {error}</p>}
             {isSuccess && todos && (
