@@ -1,4 +1,4 @@
-import Todos from "../components/Todos";
+import TodosAsyncAwait from "../components/TodosAsyncAwait";
 import styles from "./home.module.css"
 
 
@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <main className={styles.container}>
-            <Todos />
+            <TodosAsyncAwait />
         </main>
     );
 }
