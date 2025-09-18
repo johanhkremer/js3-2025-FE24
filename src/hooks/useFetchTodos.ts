@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
-import type { JsonDataTodo } from "../types/todos.typs";
+import type { JsonDataTodo } from "../types/todos.types";
 
 interface UseFetchTodosResult {
     todos: JsonDataTodo[] | null;

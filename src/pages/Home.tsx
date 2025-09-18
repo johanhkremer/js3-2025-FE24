@@ -1,11 +1,11 @@
-import TodosFetchHook from "../components/TodosFetchHook";
+import TodosTanStack from "../components/TodosTanStack";
 import styles from "./home.module.css"
 
 const Home = () => {
 
     return (
         <main className={styles.container}>
-            <TodosFetchHook />
+            <TodosTanStack />
         </main>
     );
 }
