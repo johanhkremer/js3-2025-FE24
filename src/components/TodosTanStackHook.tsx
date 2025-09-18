@@ -1,24 +1,14 @@
-import { useQuery } from "@tanstack/react-query"
-import type { JsonDataTodo } from "../types/todos.types"
+import useTanStackTodos from "../hooks/useTanStackTodos"
 import LoadSpinner from "./LoadSpinner"
 
-const TodosTanStack = () => {
-    const {
-        data: todos,
-        isPending,
-        isError,
-        error,
-        isSuccess
-    } = useQuery<JsonDataTodo[]>({
-        queryKey: ["todos"],
-        queryFn: () => fetch('https://jsonplaceholder.typicode.com/todos').then(response => response.json())
-    })
+const TodosTanStackHook = () => {
+    const { todos, isPending, isError, isSuccess } = useTanStackTodos()
 
     return (
         <>
             <h2>TodosAsyncAwait</h2>
             {isPending && <LoadSpinner />}
-            {isError && <p>Something went wrong: {error.message}</p>}
+            {isError && <p>Something went wrong</p>}
             {isSuccess && todos && (
                 <ul>
                     {todos.map((todo) => (
@@ -37,4 +27,4 @@ const TodosTanStack = () => {
     )
 }
 
-export default TodosTanStack
+export default TodosTanStackHook
