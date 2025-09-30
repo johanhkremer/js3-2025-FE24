@@ -8,7 +8,10 @@ type FormFields = {
 
 const ReactHookForm = () => {
 
-    const { register, handleSubmit, setError,
+    const {
+        register,
+        handleSubmit,
+        setError,
         formState:
         { errors } } = useForm<FormFields>()
 
@@ -38,7 +41,14 @@ const ReactHookForm = () => {
             {errors.email && <div className="text-destructive">{errors.email?.message}</div>}
 
             <label>Password</label>
-            <input {...register("password")} type="text" placeholder="type password" />
+            <input {...register("password", {
+                required: "Password is required",
+                minLength: {
+                    value: 8,
+                    message: "Password must be at least 8 chars"
+                },
+            })} type="text" placeholder="type password" />
+            {errors.password && <div className="text-destructive">{errors.password?.message}</div>}
             <Button type="submit">Submit</Button>
         </form>
     )
