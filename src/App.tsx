@@ -1,18 +1,24 @@
+import { Route, Routes } from 'react-router'
 import './App.css'
-import { LoginCard } from './components/login-card'
-import { ModeToggle } from './components/mode-toggle'
-import { MyDropdownMenu } from './components/my-dropdown-menu'
-import { Button } from './components/ui/button'
+import Homepage from './pages/homepage'
+import FormPage from './pages/formPage'
+import Navbar from './components/navbar'
 
 function App() {
 
   return (
-    <div className='flex p-3 gap-3'>
-      <Button>Knapp!</Button>
-      <MyDropdownMenu />
-      <LoginCard />
-      <ModeToggle />
-    </div>
+    <>
+      <Navbar />
+      <main className="mx-auto max-w-4xl w-full px-4 py-6">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/form" element={<FormPage />} />
+          <Route path='/*' element={<Homepage />} />
+        </Routes>
+      </main>
+
+    </>
+
   )
 }
 
