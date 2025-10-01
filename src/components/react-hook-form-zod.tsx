@@ -6,13 +6,16 @@ import LoadSpinner from "./loadspinner";
 
 const schema = z.object({
     email: z.email().trim(),
-    password: z.string().min(8).trim()
+    password: z.string().min(8).trim(),
 })
 
 type FormFields = z.infer<typeof schema>
 
 const ReactHookFormZod = () => {
-    const { register, handleSubmit, setError,
+    const {
+        register,
+        handleSubmit,
+        setError,
         formState:
         { errors, isSubmitting } } = useForm<FormFields>({
             resolver: zodResolver(schema)
