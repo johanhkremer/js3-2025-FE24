@@ -7,7 +7,7 @@ import {
 import { Link } from "react-router"
 import { ModeToggle } from "./mode-toggle"
 
-const Navbar = () => {
+export const Navbar = () => {
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -16,13 +16,20 @@ const Navbar = () => {
                     <NavigationMenuLink asChild>
                         <Link to="/">Homepage</Link>
                     </NavigationMenuLink>
-                </ NavigationMenuItem>
+                </NavigationMenuItem>
                 {/* Item 2 */}
                 <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                        <Link to="/form">Form Page</Link>
+                        <Link to="/form">Form</Link>
                     </NavigationMenuLink>
-                </ NavigationMenuItem>
+                </NavigationMenuItem>
+                {/* Item 3 */}
+                <NavigationMenuItem>
+                    <NavigationMenuLink asChild>
+                        <Link to="/pagination">Pagination</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+                {/* Item 4 */}
                 <NavigationMenuItem>
                     <ModeToggle />
                 </NavigationMenuItem>
@@ -30,5 +37,3 @@ const Navbar = () => {
         </NavigationMenu>
     )
 }
-
-export default Navbar

@@ -31,16 +31,16 @@ export function ReactHookFormShadcn() {
     })
 
     const { formState } = form
-    const { isSubmitting, isSubmitted } = formState
+    const { isSubmitting } = formState
 
     const onSubmit = async (values: FormFields) => {
         await new Promise((resolve) => setTimeout(resolve, 1000))
         console.log(values)
+        toast("Your form was submitted.")
     }
 
     return (
         <>
-            {isSubmitted && toast("Your form was submitted.")}
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <h3>React Hook Form With Shadcn</h3>
