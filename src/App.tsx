@@ -4,6 +4,7 @@ import Homepage from './pages/homepage'
 import FormPage from './pages/formPage'
 import PaginationPage from './pages/pagination-page'
 import { Navbar } from './components/navbar'
+import LocalStoragePage from './pages/local-storage-page'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/form" element={<FormPage />} />
           <Route path="/pagination" element={<PaginationPage />} />
+          <Route path='/localstorage' element={<LocalStoragePage />} />
           <Route path='/*' element={<Homepage />} />
         </Routes>
       </main>

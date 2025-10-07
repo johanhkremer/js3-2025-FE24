@@ -31,6 +31,12 @@ export const Navbar = () => {
                 </NavigationMenuItem>
                 {/* Item 4 */}
                 <NavigationMenuItem>
+                    <NavigationMenuLink asChild>
+                        <Link to="/localstorage">Local Storage</Link>
+                    </NavigationMenuLink>
+                </NavigationMenuItem>
+                {/* Item 5 */}
+                <NavigationMenuItem>
                     <ModeToggle />
                 </NavigationMenuItem>
             </NavigationMenuList>
