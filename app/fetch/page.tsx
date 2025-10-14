@@ -1,4 +1,6 @@
-interface User {
+import UserCard from "@/components/user-card"
+
+export interface User {
     id: number,
     name: string,
     email: string,
@@ -15,11 +17,13 @@ const FetchPage = async () => {
             <h1>FetchPage</h1>
             <section className="flex flex-col gap-3">
                 {users && users.map((user) => (
-                    <div key={user.id} className="border rounded-md p-3 max-w-64">
-                        <h2>{user.name}</h2>
-                        <p>{user.email}</p>
+                    <div key={user.id}>
+                        <UserCard user={user} />
                     </div>
-                ))}
+
+                ))
+                }
+
             </section>
         </>
     )
