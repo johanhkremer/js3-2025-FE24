@@ -125,4 +125,9 @@
     font-weight: bolder;
     font-size: x-large;
   }
+
+  h2 {
+    font-weight: bold;
+    font-size: large;
+  }
 }
