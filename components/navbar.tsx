@@ -29,11 +29,11 @@ const Navbar = () => {
                     </NavigationMenuLink>
                 </NavigationMenuItem>
                 {/* 4 */}
-                {/* <NavigationMenuItem>
+                <NavigationMenuItem>
                     <NavigationMenuLink asChild>
                         <Link href="/todos">Todos</Link>
                     </NavigationMenuLink>
-                </NavigationMenuItem> */}
+                </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
     )
