@@ -5,6 +5,7 @@ import {
     NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import Link from "next/link"
+import AvatarAuth from "./avatar-auth"
 
 const Navbar = () => {
     return (
@@ -34,6 +35,7 @@ const Navbar = () => {
                         <Link href="/todos">Todos</Link>
                     </NavigationMenuLink>
                 </NavigationMenuItem>
+                <AvatarAuth />
             </NavigationMenuList>
         </NavigationMenu>
     )
